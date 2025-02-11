@@ -7,7 +7,7 @@ class Particle {
     this.x = noise(width,0);
     this.y = random(0,width);
     this.r = random(1,4);
-    this.xSpeed = random(-2000,100);
+    this.xSpeed = random(-100,100);
     this.ySpeed = random(-1000,100);
   }
 
@@ -55,7 +55,7 @@ class Particle {
   joinParticles(particles) {
     particles.forEach(element =>{
       let dis = dist(this.x,this.y,element.x,element.y);
-      if(dis<200) {
+      if(dis<100) {
         stroke("white");
         line(this.x,this.y,element.x,element.y);
         line(this.x,this.y)
@@ -91,7 +91,7 @@ class Particle {
         endShape();
         
         
-        if(dis<600) {
+        if(dis<100) {
         stroke("white");
         line(this.x,this.y,element.x,element.y);
         line(this.x,this.y)
@@ -116,7 +116,7 @@ class Particle {
 let particles = [];
 
 function setup() {
-  createCanvas(1500, 1500);
+  createCanvas(500, 500);
   background("black")
   for(let i = 0;i<width/18;i++){
     particles.push(new Particle());
