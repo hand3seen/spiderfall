@@ -55,7 +55,7 @@ class Particle {
   joinParticles(particles) {
     particles.forEach(element =>{
       let dis = dist(this.x,this.y,element.x,element.y);
-      if(dis<100) {
+      if(dis<10) {
         stroke("white");
         line(this.x,this.y,element.x,element.y);
         line(this.x,this.y)
@@ -118,7 +118,7 @@ let particles = [];
 function setup() {
   createCanvas(500, 500);
   background("black")
-  for(let i = 0;i<width/18;i++){
+  for(let i = 0;i<width/1;i++){
     particles.push(new Particle());
     
     
